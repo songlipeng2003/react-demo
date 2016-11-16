@@ -433,6 +433,10 @@ babel-plugin-check-es2015-constants@^6.3.13:
   dependencies:
     babel-runtime "^6.0.0"
 
+babel-plugin-import:
+  version "1.0.1"
+  resolved "http://registry.npm.taobao.org/babel-plugin-import/download/babel-plugin-import-1.0.1.tgz#7fe2421e7882ee3940450feb225ecfa09ea8d855"
+
 babel-plugin-syntax-flow@^6.18.0, babel-plugin-syntax-flow@^6.3.13:
   version "6.18.0"
   resolved "http://registry.npm.taobao.org/babel-plugin-syntax-flow/download/babel-plugin-syntax-flow-6.18.0.tgz#4c3ab20a2af26aa20cd25995c398c4eb70310c8d"
