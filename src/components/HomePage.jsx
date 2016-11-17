@@ -21,29 +21,23 @@ class HomePage extends React.Component {
   }
 
   render() {
-    var topics = this.state.topics;
-    var results = [];
-    topics.forEach(p => {
-      var item =
-        <div key={p.id}>
-          <WhiteSpace size="lg" />
-          <Card>
-            <Card.Header title={p.title} />
-            <Card.Body>
-              <div>发布时间:{p.create_at}</div>
-            </Card.Body>
-          </Card>
-          <WhiteSpace size="lg" />
-        </div>;
-
-      results.push(item);
-    });
-
     return (
       <div>
         <NavBar>首页</NavBar>
 
-        {results}
+        {this.state.topics.map(p => {
+          return <div key={p.id}>
+            <WhiteSpace size="lg" />
+            <Card>
+              <Card.Header title={p.title} />
+              <Card.Body>
+                <div>发布时间:{p.create_at}</div>
+              </Card.Body>
+            </Card>
+            <WhiteSpace size="lg" />
+          </div>;
+        })}
+
       </div>
     );
   }
