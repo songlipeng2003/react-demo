@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { NavBar, Card, WhiteSpace } from 'antd-mobile';
+import { Link } from 'react-router'
 import { Topic } from '../api';
 
 class HomePage extends React.Component {
@@ -25,13 +26,13 @@ class HomePage extends React.Component {
       <div>
         <NavBar>首页</NavBar>
 
-        {this.state.topics.map(p => {
-          return <div key={p.id}>
+        {this.state.topics.map(topic => {
+          return <div key={topic.id}>
             <WhiteSpace size="lg" />
             <Card>
-              <Card.Header title={p.title} />
+              <Card.Header title={<Link to={`/topic/${topic.id}`}>{topic.title}</Link>} />
               <Card.Body>
-                <div>发布时间:{p.create_at}</div>
+                <div>发布时间:{topic.create_at}</div>
               </Card.Body>
             </Card>
             <WhiteSpace size="lg" />

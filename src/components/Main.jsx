@@ -4,7 +4,7 @@ import React from 'react';
 
 import Bottom from './Bottom'
 
-class AppComponent extends React.Component {
+class MainComponent extends React.Component {
   render() {
     return (
       <div className="index">
@@ -14,7 +14,4 @@ class AppComponent extends React.Component {
   }
 }
 
-AppComponent.defaultProps = {
-};
-
-export default AppComponent;
+export default MainComponent;

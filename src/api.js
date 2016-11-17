@@ -7,7 +7,7 @@ class Topic {
     return axios.get('topics');
   }
   static get(id){
-    return axios.get('toplic/' + id);
+    return axios.get('topic/' + id);
   }
 }
 
