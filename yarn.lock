@@ -78,7 +78,7 @@ ansi-styles@~1.0.0:
   version "1.0.0"
   resolved "http://registry.npm.taobao.org/ansi-styles/download/ansi-styles-1.0.0.tgz#cb102df1c56f5123eab8b67cd7b98027a0279178"
 
-antd-mobile@^0.9.6:
+antd-mobile:
   version "0.9.8"
   resolved "http://registry.npm.taobao.org/antd-mobile/download/antd-mobile-0.9.8.tgz#dad54a996728d466af68861eacb993ab65593dbe"
   dependencies:
