@@ -26,8 +26,8 @@ class Bottom extends React.Component {
         <TabBar.Item
           icon={{ uri: 'https://zos.alipayobjects.com/rmsportal/YWpPVCVOnJoCYhs.png' }}
           selectedIcon={{ uri: 'https://zos.alipayobjects.com/rmsportal/HLkBvJOKnmOfBPO.png' }}
-          title="生活"
-          key="生活"
+          title="首页"
+          key="首页"
           selected={this.state.selectedTab === 'blueTab'}
           onPress={() => {
             this.setState({
