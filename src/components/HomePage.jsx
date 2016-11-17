@@ -14,7 +14,9 @@ class HomePage extends React.Component {
 
   componentDidMount(){
     Topic.query().then((response) => {
-      this.state.topics = response.data.data;
+      this.setState({
+        topics: response.data.data
+      });
     });
   }
 
@@ -23,7 +25,7 @@ class HomePage extends React.Component {
     var results = [];
     topics.forEach(p => {
       var item =
-        <div>
+        <div key={p.id}>
           <WhiteSpace size="lg" />
           <Card>
             <Card.Header title={p.title} />
