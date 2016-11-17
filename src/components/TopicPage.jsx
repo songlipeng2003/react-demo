@@ -26,14 +26,16 @@ class HomePage extends React.Component {
       <div>
         <NavBar>帖子内容</NavBar>
 
-        <WhiteSpace size="lg" />
-        <Card>
-          <Card.Header title={this.state.topic.title} />
-          <Card.Body>
-            <div>发布时间:{this.state.topic.content}</div>
-          </Card.Body>
-        </Card>
-        <WhiteSpace size="lg" />
+        <div className="topic-content">
+          <WhiteSpace size="lg" />
+          <Card>
+            <Card.Header title={this.state.topic.title} />
+            <Card.Body>
+              <div dangerouslySetInnerHTML={{__html: this.state.topic.content}}></div>
+            </Card.Body>
+          </Card>
+          <WhiteSpace size="lg" />
+        </div>
       </div>
     );
   }
