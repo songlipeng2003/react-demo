@@ -9,7 +9,6 @@ export function login(user) {
 
 export function logout() {
   return {
-    type: LOGOUT,
-    user
+    type: LOGOUT
   }
 }
