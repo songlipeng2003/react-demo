@@ -37,6 +37,20 @@ class HomePage extends React.Component {
           </Card>
           <WhiteSpace size="lg" />
         </div>
+
+        {this.state.topic.replies.map(reply => {
+          return <div key={reply.id}>
+            <WhiteSpace size="lg" />
+            <Card>
+              <Card.Header title={`回复人:${reply.author.loginname}`} />
+              <Card.Body>
+                <div dangerouslySetInnerHTML={{__html: reply.content}}></div>
+                <div>发布时间:{reply.create_at}</div>
+              </Card.Body>
+            </Card>
+            <WhiteSpace size="lg" />
+          </div>;
+        })}
       </div>
     );
   }
