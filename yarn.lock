@@ -4256,6 +4256,10 @@ react-router:
     loose-envify "^1.2.0"
     warning "^3.0.0"
 
+react-router-redux:
+  version "4.0.7"
+  resolved "http://registry.npm.taobao.org/react-router-redux/download/react-router-redux-4.0.7.tgz#9b1fde4e70106c50f47214e12bdd888cfb96e2a6"
+
 react-static-container@^1.0.1:
   version "1.0.1"
   resolved "http://registry.npm.taobao.org/react-static-container/download/react-static-container-1.0.1.tgz#694c0dd68a896b879519afb548399cc1989c9ab0"
