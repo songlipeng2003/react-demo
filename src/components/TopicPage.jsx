@@ -10,14 +10,16 @@ class HomePage extends React.Component {
 
     this.state = {
       id: this.props.params.id,
-      topic: []
+      topic: {},
+      replies: []
     };
   }
 
   componentDidMount(){
     Topic.get(this.state.id).then((response) => {
       this.setState({
-        topic: response.data.data
+        topic: response.data.data,
+        replies: response.data.data.replies
       });
     });
   }
@@ -38,7 +40,7 @@ class HomePage extends React.Component {
           <WhiteSpace size="lg" />
         </div>
 
-        {this.state.topic.replies.map(reply => {
+        {this.state.replies.map(reply => {
           return <div key={reply.id}>
             <WhiteSpace size="lg" />
             <Card>
