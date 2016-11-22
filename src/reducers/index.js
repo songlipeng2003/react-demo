@@ -1,4 +1,6 @@
 import { combineReducers } from 'redux'
 import account from './account'
-const demoApp = combineReducers({account})
+import tab from './tab'
+
+const demoApp = combineReducers({account, tab})
 export default demoApp
