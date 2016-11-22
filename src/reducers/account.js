@@ -1,8 +1,8 @@
 import { LOGIN, LOGOUT } from '../actions/actionTypes'
 
 const initialState = {
-  token: '',
-  user: [],
+  token: null,
+  loginname: null,
   logined: false
 };
 
@@ -12,14 +12,14 @@ export default function account(state=initialState, action) {
       return Object.assign({}, state,
         {
           token: action.user.token,
-          user: action.user,
+          loginname: action.user.loginname,
           logined: true
         });
     case LOGOUT:
       return Object.assign({}, state,
         {
           token: null,
-          user: null,
+          loginname: null,
           logined: false
         });
     default:
