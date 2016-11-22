@@ -7,12 +7,9 @@ const initialState = {
 export default function tab(state=initialState, action) {
   switch (action.type) {
     case CHANGE_TAB:
-      return [
-        ...state,
-        {
+      return Object.assign({}, state, {
           selected: action.selected
-        }
-      ];
+        });
     default:
       return state;
   }

@@ -1,18 +1,16 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
 import { TabBar } from 'antd-mobile';
+import { connect } from 'react-redux';
 
-import HomePage from './HomePage'
-import MyPage from './MyPage'
-import NodePage from './NodePage'
+import HomePage from './HomePage';
+import MyPage from './MyPage';
+
+import { changeTab } from '../actions/tab';
 
 class Bottom extends React.Component {
   constructor(props){
     super(props);
-    this.state = {
-      selectedTab: 'redTab',
-      hidden: false
-    }
   }
 
   render() {
@@ -21,49 +19,27 @@ class Bottom extends React.Component {
         unselectedTintColor="#949494"
         tintColor="#33A3F4"
         barTintColor="white"
-        hidden={this.state.hidden}
       >
         <TabBar.Item
           icon={{ uri: 'https://zos.alipayobjects.com/rmsportal/YWpPVCVOnJoCYhs.png' }}
           selectedIcon={{ uri: 'https://zos.alipayobjects.com/rmsportal/HLkBvJOKnmOfBPO.png' }}
           title="首页"
           key="首页"
-          selected={this.state.selectedTab === 'blueTab'}
+          selected={this.props.tab.selected === 'homeTab'}
           onPress={() => {
-            this.setState({
-              selectedTab: 'blueTab'
-            });
+            this.props.dispatch(changeTab('homeTab'));
           }}
-          data-seed="logId"
         >
         <HomePage></HomePage>
-        </TabBar.Item>
-        <TabBar.Item
-          icon={{ uri: 'https://zos.alipayobjects.com/rmsportal/UNQhIatjpNZHjVf.png' }}
-          selectedIcon={{ uri: 'https://zos.alipayobjects.com/rmsportal/HLkBvJOKnmOfBPO.png' }}
-          title="口碑"
-          key="口碑"
-          badge={1}
-          selected={this.state.selectedTab === 'redTab'}
-          onPress={() => {
-            this.setState({
-              selectedTab: 'redTab'
-            });
-          }}
-          data-seed="logId1"
-        >
-        <NodePage></NodePage>
         </TabBar.Item>
         <TabBar.Item
           icon={{ uri: 'https://zos.alipayobjects.com/rmsportal/YWpPVCVOnJoCYhs.png' }}
           selectedIcon={{ uri: 'https://zos.alipayobjects.com/rmsportal/WadBBxOIZtDzsgP.png' }}
           title="我的"
           key="我的"
-          selected={this.state.selectedTab === 'yellowTab'}
+          selected={this.props.tab.selected === 'myTab'}
           onPress={() => {
-            this.setState({
-              selectedTab: 'yellowTab'
-            })
+            this.props.dispatch(changeTab('myTab'));
           }}
         >
           <MyPage></MyPage>
@@ -73,4 +49,16 @@ class Bottom extends React.Component {
   }
 }
 
-export default Bottom;
+Bottom.propTypes = {
+  tab: PropTypes.object.isRequired
+}
+
+function select(state) {
+  console.log(state);
+
+  return {
+    tab: state.tab
+  }
+}
+
+export default connect(select)(Bottom)
