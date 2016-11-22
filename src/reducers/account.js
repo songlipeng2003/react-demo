@@ -9,23 +9,19 @@ const initialState = {
 export default function account(state=initialState, action) {
   switch (action.type) {
     case LOGIN:
-      return [
-        ...state,
+      return Object.assign({}, state,
         {
           token: action.user.token,
           user: action.user,
           logined: true
-        }
-      ];
+        });
     case LOGOUT:
-      return [
-        ...state,
+      return Object.assign({}, state,
         {
-          token: '',
-          user: [],
+          token: null,
+          user: null,
           logined: false
-        }
-      ];
+        });
     default:
       return state;
   }

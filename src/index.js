@@ -32,8 +32,8 @@ ReactDOM.render(
     <Router history={history}>
       <Route path="/" component={App}>
         <IndexRoute component={Main}/>
-        <Route path="topic/:id" component={TopicPage} />
-        <Route path="login" component={LoginPage} />
       </Route>
+      <Route path="topic/:id" component={TopicPage} />
+      <Route path="login" component={LoginPage} />
     </Router>
   </Provider>, document.getElementById('app'));

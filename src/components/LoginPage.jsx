@@ -7,7 +7,13 @@ import { connect } from 'react-redux';
 import { login } from '../actions/account';
 
 class LoginPage extends React.Component {
-  onloginClick() {
+  constructor(props) {
+    super(props);
+
+    this.onLoginClick = this.onLoginClick.bind(this);
+  }
+
+  onLoginClick() {
     this.props.dispatch(login({token: '123'}));
     browserHistory.push('/');
   }
@@ -18,11 +24,10 @@ class LoginPage extends React.Component {
         <NavBar>登录</NavBar>
 
         <List renderHeader={() => '登录信息'}>
-          <InputItem placeholder="请输入账号">账号</InputItem>
-          <InputItem placeholder="请输入密码" type="password">密码</InputItem>
+          <InputItem placeholder="请输入Access Token">Token</InputItem>
         </List>
         <div style={{ margin: 12 }}>
-          <Button type="primary" onClick={this.onloginClick}>登录</Button>
+          <Button type="primary" onClick={this.onLoginClick}>登录</Button>
         </div>
       </div>
     );
