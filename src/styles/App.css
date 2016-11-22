@@ -5,3 +5,10 @@ body {
 .topic-content img {
   width: 100%;
 }
+
+
+.error-404 {
+  margin: 30% auto;
+  text-align: center;
+  font-size: 40px;
+}

@@ -13,6 +13,7 @@ import App from './components/App';
 import Main from './components/Main';
 import TopicPage from './components/TopicPage';
 import LoginPage from './components/LoginPage';
+import NotFound from './components/NotFound';
 
 import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
 
@@ -35,5 +36,6 @@ ReactDOM.render(
       </Route>
       <Route path="topic/:id" component={TopicPage} />
       <Route path="login" component={LoginPage} />
+      <Route path="*" component={NotFound} />
     </Router>
   </Provider>, document.getElementById('app'));
