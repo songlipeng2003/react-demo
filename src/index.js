@@ -2,11 +2,12 @@ import 'core-js/fn/object/assign';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, IndexRoute, browserHistory } from 'react-router'
+import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 
-import { createStore, combineReducers } from 'redux'
-import { Provider } from 'react-redux'
-import account from './reducers/account'
+import { createStore, combineReducers } from 'redux';
+import { Provider } from 'react-redux';
+import account from './reducers/account';
+import tab from './reducers/tab';
 
 import App from './components/App';
 import Main from './components/Main';
@@ -18,6 +19,7 @@ import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
 const store = createStore(
   combineReducers({
     account: account,
+    tab: tab,
     routing: routerReducer
   })
 );

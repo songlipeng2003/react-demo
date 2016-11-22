@@ -3,6 +3,7 @@ import React from 'react';
 import { NavBar, List, InputItem, Button } from 'antd-mobile';
 import { browserHistory } from 'react-router'
 import { connect } from 'react-redux';
+
 import { login } from '../actions/account';
 
 class LoginPage extends React.Component {
@@ -28,4 +29,4 @@ class LoginPage extends React.Component {
   }
 }
 
-export default connect(LoginPage);
+export default connect()(LoginPage);

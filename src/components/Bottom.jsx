@@ -54,8 +54,6 @@ Bottom.propTypes = {
 }
 
 function select(state) {
-  console.log(state);
-
   return {
     tab: state.tab
   }
