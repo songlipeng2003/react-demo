@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 
 import HomePage from './HomePage';
 import MyPage from './MyPage';
+import MessagePage from './MessagePage';
 
 import { changeTab } from '../actions/tab';
 
@@ -30,7 +31,19 @@ class Bottom extends React.Component {
             this.props.dispatch(changeTab('homeTab'));
           }}
         >
-        <HomePage></HomePage>
+          <HomePage></HomePage>
+        </TabBar.Item>
+        <TabBar.Item
+          icon={{ uri: 'https://zos.alipayobjects.com/rmsportal/YWpPVCVOnJoCYhs.png' }}
+          selectedIcon={{ uri: 'https://zos.alipayobjects.com/rmsportal/HLkBvJOKnmOfBPO.png' }}
+          title="消息"
+          key="消息"
+          selected={this.props.tab.selected === 'messageTab'}
+          onPress={() => {
+            this.props.dispatch(changeTab('messageTab'));
+          }}
+        >
+          <MessagePage></MessagePage>
         </TabBar.Item>
         <TabBar.Item
           icon={{ uri: 'https://zos.alipayobjects.com/rmsportal/YWpPVCVOnJoCYhs.png' }}
