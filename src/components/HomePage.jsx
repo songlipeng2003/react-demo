@@ -1,7 +1,7 @@
 import React from 'react';
-
-import { NavBar, ListView, ActivityIndicator } from 'antd-mobile';
 import { Link } from 'react-router-dom'
+import { NavBar, ListView, ActivityIndicator } from 'antd-mobile';
+
 import { Topic } from '../api';
 
 class HomePage extends React.Component {

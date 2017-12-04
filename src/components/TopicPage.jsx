@@ -1,14 +1,14 @@
 import React from 'react';
 
-import { NavBar, Card, WhiteSpace } from 'antd-mobile';
+import { NavBar, Card, WhiteSpace, Icon } from 'antd-mobile';
 import { Topic } from '../api';
 
-class HomePage extends React.Component {
+class TopicPage extends React.Component {
   constructor(props){
     super(props);
 
     this.state = {
-      id: this.props.params.id,
+      id: this.props.match.params.id,
       topic: {},
       replies: []
     };
@@ -28,7 +28,10 @@ class HomePage extends React.Component {
 
     return (
       <div>
-        <NavBar onLeftClick={history.goBack}>帖子内容</NavBar>
+        <NavBar
+          icon={<Icon type="left" />}
+          onLeftClick={history.goBack}
+          >帖子内容</NavBar>
 
         <div className="topic-content">
           <WhiteSpace size="lg" />
@@ -59,4 +62,4 @@ class HomePage extends React.Component {
   }
 }
 
-export default HomePage;
+export default TopicPage;

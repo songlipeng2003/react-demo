@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, Switch} from 'react-router';
+import { Route, Redirect, Switch} from 'react-router';
 import { BrowserRouter } from 'react-router-dom';
 import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
@@ -30,11 +30,11 @@ ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
       <Switch>
-        <Route path="/" component={App}>
-        </Route>
-        <Route path="topic/:id" component={TopicPage} />
-        <Route path="login" component={LoginPage} />
-        <Route path="*" component={NotFound} />
+        <Route exact path="/" component={App} />
+        <Route path="/topic/:id" component={TopicPage} />
+        <Route path="/login" component={LoginPage} />
+        <Route path="/404" component={NotFound} />
+        <Redirect path="*" to="/404" />
       </Switch>
     </BrowserRouter>
   </Provider>, document.getElementById('app'));
