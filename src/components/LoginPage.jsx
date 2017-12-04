@@ -1,8 +1,7 @@
 import React from 'react';
-
-import { NavBar, List, InputItem, Button, Toast } from 'antd-mobile';
-import { browserHistory } from 'react-router'
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router'
+import { NavBar, List, InputItem, Button, Toast } from 'antd-mobile';
 
 import { login } from '../actions/account';
 import { User } from '../api';
@@ -24,7 +23,7 @@ class LoginPage extends React.Component {
         let data = response.data;
         if(data.success){
           this.props.dispatch(login({token: accessToken, 'loginname': data.loginname}));
-          browserHistory.push('/');
+          this.props.history.push('/');
         }
       }).catch((error) => {
         Toast.fail(error.response.data.error_msg);

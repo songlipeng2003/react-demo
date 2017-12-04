@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { NavBar, ListView, RefreshControl, ActivityIndicator } from 'antd-mobile';
-import { Link } from 'react-router'
+import { NavBar, ListView, ActivityIndicator } from 'antd-mobile';
+import { Link } from 'react-router-dom'
 import { Topic } from '../api';
 
 class HomePage extends React.Component {
@@ -88,12 +88,16 @@ class HomePage extends React.Component {
       <div>
         <NavBar>首页</NavBar>
 
-        <ListView dataSource={this.state.dataSource} renderRow={row} renderSeparator={separator}
-          scrollRenderAheadDistance={200} scrollEventThrottle={20} scrollerOptions={{ scrollbars: true }}
-          onScroll={this.onScroll} scrollerOptions={{ scrollbars: true }}
+        <ListView
+          dataSource={this.state.dataSource}
+          renderRow={row}
+          renderSeparator={separator}
+          scrollRenderAheadDistance={200}
+          scrollEventThrottle={20}
+          scrollerOptions={{ scrollbars: true }}
+          onScroll={this.onScroll}
+          scrollerOptions={{ scrollbars: true }}
           style={{height: document.body.scrollHeight}}
-          refreshControl={<RefreshControl distanceToRefresh={80} refreshing={this.state.refreshing} onRefresh={this.onRefresh}
-          />}
         />
 
         <ActivityIndicator toast text="正在加载" animating={this.state.refreshing} />

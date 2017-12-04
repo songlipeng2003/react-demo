@@ -1,14 +1,13 @@
 import React, { PropTypes } from 'react';
+import { connect } from 'react-redux'
+import { withRouter } from 'react-router'
 
 import { NavBar, Tabs, List } from 'antd-mobile';
 
+import { User } from '../api';
+
 const TabPane = Tabs.TabPane;
 const Item = List.Item;
-
-import { connect } from 'react-redux'
-import { browserHistory } from 'react-router'
-
-import { User } from '../api';
 
 class MyPage extends React.Component {
   constructor(props){
@@ -23,7 +22,7 @@ class MyPage extends React.Component {
 
   componentDidMount(){
     if(!this.props.account.logined){
-      browserHistory.push('/login');
+      this.props.history.push('/login');
     }
 
     User.get(this.props.account.loginname).then((response) => {
@@ -66,9 +65,9 @@ class MyPage extends React.Component {
   }
 }
 
-MyPage.propTypes = {
-  account: PropTypes.object.isRequired
-}
+// MyPage.propTypes = {
+//   account: PropTypes.object.isRequired
+// }
 
 function select(state) {
   return {
@@ -76,4 +75,4 @@ function select(state) {
   }
 }
 
-export default connect(select)(MyPage)
+export default withRouter(connect(select)(MyPage))

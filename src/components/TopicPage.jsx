@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { NavBar, Card, WhiteSpace } from 'antd-mobile';
-import { browserHistory } from 'react-router'
 import { Topic } from '../api';
 
 class HomePage extends React.Component {
@@ -25,9 +24,11 @@ class HomePage extends React.Component {
   }
 
   render() {
+    const { history } = this.props;
+
     return (
       <div>
-        <NavBar onLeftClick={browserHistory.goBack}>帖子内容</NavBar>
+        <NavBar onLeftClick={history.goBack}>帖子内容</NavBar>
 
         <div className="topic-content">
           <WhiteSpace size="lg" />

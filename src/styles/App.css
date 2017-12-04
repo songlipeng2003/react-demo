@@ -1,5 +1,11 @@
-/* Base Application Styles */
+@import '~antd-mobile/dist/antd-mobile.css';
+
 body {
+  height: 100%;
+}
+
+#app {
+  height: 100%;
 }
 
 .topic-content img {

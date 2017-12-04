@@ -1,13 +1,11 @@
-require('styles/App.css');
-
 import React from 'react';
+
+import Bottom from './Bottom'
 
 class App extends React.Component {
   render() {
     return (
-      <div>
-        {this.props.children}
-      </div>
+      <Bottom></Bottom>
     );
   }
 }

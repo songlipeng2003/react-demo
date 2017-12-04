@@ -62,9 +62,9 @@ class Bottom extends React.Component {
   }
 }
 
-Bottom.propTypes = {
-  tab: PropTypes.object.isRequired
-}
+// Bottom.propTypes = {
+//   tab: PropTypes.object.isRequired
+// }
 
 function select(state) {
   return {

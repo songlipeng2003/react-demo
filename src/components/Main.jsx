@@ -1,5 +1,3 @@
-require('styles/App.css');
-
 import React from 'react';
 
 import Bottom from './Bottom'
