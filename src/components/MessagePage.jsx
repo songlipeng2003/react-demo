@@ -33,25 +33,33 @@ class MessagePage extends React.Component {
   }
 
   render() {
+    const tabs = [
+      { title: '未读通知', sub: '1' },
+      { title: '已读通知', sub: '2' },
+    ];
+
     return (
       <div className="my">
         <NavBar>消息</NavBar>
 
-        <Tabs defaultActiveKey="1">
-          <TabPane tab="未读通知" key="1">
+        <Tabs
+          tabs={tabs}
+          initialPage={1}
+          >
+          <div>
             <List>
               {this.state.hasnot_read_messages.map(message => {
                 return <Item wrap arrow="horizontal" key="{message.id}">{message.topic.title}</Item>
               })}
             </List>
-          </TabPane>
-          <TabPane tab="已读通知" key="2">
+          </div>
+          <div>
             <List>
               {this.state.has_read_messages.map(message => {
                 return <Item wrap arrow="horizontal" key="{message.id}">{message.topic.title}</Item>
               })}
             </List>
-          </TabPane>
+          </div>
         </Tabs>
       </div>
     );

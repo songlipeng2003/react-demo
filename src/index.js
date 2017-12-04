@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, IndexRoute} from 'react-router';
+import { Router, Route, Switch} from 'react-router';
 import { BrowserRouter } from 'react-router-dom';
 import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
@@ -29,12 +29,12 @@ const store = createStore(
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
-      <div>
+      <Switch>
         <Route path="/" component={App}>
         </Route>
         <Route path="topic/:id" component={TopicPage} />
         <Route path="login" component={LoginPage} />
         <Route path="*" component={NotFound} />
-      </div>
+      </Switch>
     </BrowserRouter>
   </Provider>, document.getElementById('app'));

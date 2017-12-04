@@ -35,6 +35,11 @@ class MyPage extends React.Component {
   }
 
   render() {
+    const tabs = [
+      { title: '最新帖子', sub: '1' },
+      { title: '最新回复', sub: '2' },
+    ];
+
     return (
       <div className="my">
         <NavBar>我的</NavBar>
@@ -44,21 +49,23 @@ class MyPage extends React.Component {
           <p>{this.state.user.loginname}</p>
         </div>
 
-        <Tabs defaultActiveKey="1">
-          <TabPane tab="最新帖子" key="1">
+        <Tabs
+          tabs={tabs}
+          initialPage={1}>
+          <div>
             <List>
               {this.state.recent_topics.map(topic => {
                 return <Item wrap arrow="horizontal" key="{toplic.id}">{topic.title}</Item>
               })}
             </List>
-          </TabPane>
-          <TabPane tab="最新回复" key="2">
+          </div>
+          <div>
             <List>
               {this.state.recent_replies.map(reply => {
                 return <Item wrap arrow="horizontal" key="{reply.id}">{reply.title}</Item>
               })}
             </List>
-          </TabPane>
+          </div>
         </Tabs>
       </div>
     );
