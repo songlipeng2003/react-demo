@@ -68,7 +68,7 @@
   },
   "dependencies": {
     "antd-mobile": "^2.0.3",
-    "axios": "^0.15.2",
+    "axios": "^0.17.1",
     "core-js": "^2.0.0",
     "normalize.css": "^4.0.0",
     "rc-form": "^1.0.1",

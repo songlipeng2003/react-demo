@@ -1,10 +1,8 @@
 import axios from 'axios'
 
-var instance = axios.create({
-  baseURL: 'https://cnodejs.org/api/v1'
-});
+axios.defaults.baseURL = 'https://cnodejs.org/api/v1'
 
-instance.interceptors.request.use(function (config) {
+axios.interceptors.request.use(function (config) {
   config.transformRequest = [function(data){
     if(!data){
       data = {};
@@ -19,26 +17,26 @@ instance.interceptors.request.use(function (config) {
 
 class Topic {
   static query(){
-    return instance.get('topics');
+    return axios.get('topics');
   }
   static get(id){
-    return instance.get(`topic/${id}`);
+    return axios.get(`topic/${id}`);
   }
 }
 
 class User {
   static get(loginname){
-    return instance.get(`user/${loginname}`);
+    return axios.get(`user/${loginname}`);
   }
 
   static login(accessToken){
-    return instance.post('accesstoken', {accesstoken: accessToken});
+    return axios.post('accesstoken', {accesstoken: accessToken});
   }
 }
 
 class Message {
   static query(accessToken){
-    return instance.get('messages', {params: {accesstoken: accessToken}});
+    return axios.get('messages', {params: {accesstoken: accessToken}});
   }
 }
 
