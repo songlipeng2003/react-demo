@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router'
 
@@ -6,7 +7,6 @@ import { NavBar, Tabs, List } from 'antd-mobile';
 
 import { User } from '../api';
 
-const TabPane = Tabs.TabPane;
 const Item = List.Item;
 
 class MyPage extends React.Component {
@@ -45,7 +45,7 @@ class MyPage extends React.Component {
         <NavBar>我的</NavBar>
 
         <div className="info">
-          <img src={this.state.user.avatar_url}/>
+          <img src={this.state.user.avatar_url} alt="avatar"/>
           <p>{this.state.user.loginname}</p>
         </div>
 
@@ -72,9 +72,9 @@ class MyPage extends React.Component {
   }
 }
 
-// MyPage.propTypes = {
-//   account: PropTypes.object.isRequired
-// }
+MyPage.propTypes = {
+  account: PropTypes.object.isRequired
+}
 
 function select(state) {
   return {

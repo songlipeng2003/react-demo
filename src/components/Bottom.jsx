@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 import { TabBar } from 'antd-mobile';
 import { connect } from 'react-redux';
@@ -10,10 +11,6 @@ import MessagePage from './MessagePage';
 import { changeTab } from '../actions/tab';
 
 class Bottom extends React.Component {
-  constructor(props){
-    super(props);
-  }
-
   render() {
     return (
       <TabBar
@@ -62,9 +59,9 @@ class Bottom extends React.Component {
   }
 }
 
-// Bottom.propTypes = {
-//   tab: PropTypes.object.isRequired
-// }
+Bottom.propTypes = {
+  tab: PropTypes.object.isRequired
+}
 
 function select(state) {
   return {

@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router'
 
@@ -6,7 +6,6 @@ import { NavBar, Tabs, List } from 'antd-mobile';
 
 import { Message } from '../api';
 
-const TabPane = Tabs.TabPane;
 const Item = List.Item;
 
 class MessagePage extends React.Component {

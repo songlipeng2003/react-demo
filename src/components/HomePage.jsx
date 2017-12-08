@@ -96,7 +96,6 @@ class HomePage extends React.Component {
           scrollEventThrottle={20}
           scrollerOptions={{ scrollbars: true }}
           onScroll={this.onScroll}
-          scrollerOptions={{ scrollbars: true }}
           style={{height: document.body.scrollHeight}}
         />
 

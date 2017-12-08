@@ -53,4 +53,4 @@ class LoginPage extends React.Component {
   }
 }
 
-export default connect()(LoginPage);
+export default withRouter(connect()(LoginPage));

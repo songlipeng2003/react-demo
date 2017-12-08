@@ -15,7 +15,7 @@ import NotFound from './components/NotFound';
 
 import './styles/App.css';
 
-import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
+import { routerReducer } from 'react-router-redux'
 
 const store = createStore(
   combineReducers({
